@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class PublicationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findPublication()
+    {
+        $qb = $this->createQueryBuilder("p");
+
+        return $qb
+            ->orderBy("p.publishedAt", "DESC")
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
 }

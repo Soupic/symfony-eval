@@ -1,2 +1,28 @@
-{% extends 'AppBundle::base.html.twig' %}
+{% extends "AppBundle::base.html.twig" %}
 
+{% block name %} {{ parent() }} {% enblock %}
+
+{% block content %}
+    <table class="table table-stripped table-condensed">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>Published At</th>
+                <th>Science</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for publication in publications %}
+            <tr>
+                <td><a href="{{ path("publication_show", {'id' : publication.id }) }}">{{ publication.title }}</a></td>
+                <td>{{ publication.description }}</td>
+                <td>{{ publication.Author }}</td>
+                <td>{{ publication.publishedAt|date("d/m/y") }}</td>
+                <td>{{ publication.science }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

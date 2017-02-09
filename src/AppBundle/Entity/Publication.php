@@ -46,6 +46,10 @@ class Publication
      */
     private $science;
 
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 
     /**
      * Get id

@@ -20,7 +20,7 @@ class PublicationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $publications = $em->getRepository('AppBundle:Publication')->findAll();
+        $publications = $em->getRepository('AppBundle:Publication')->findPublication();
 
         return $this->render('AppBundle:App:home.html.twig', array(
             'publications' => $publications,

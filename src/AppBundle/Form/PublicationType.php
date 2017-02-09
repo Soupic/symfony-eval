@@ -2,10 +2,13 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type;
+use AppBundle\Entity\Science;
 
 class PublicationType extends AbstractType
 {
@@ -19,9 +22,11 @@ class PublicationType extends AbstractType
             ->add('author')
             ->add('description')
             ->add('content')
-            ->add('publishedAt')
+            ->add('publishedAt', Type\DateType::class)
             ->add('validated')
-            ->add('science')
+            ->add('science', EntityType::class, [
+                "class" => Science::class,
+            ])
             ->add('save', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-sm btn-primary',
