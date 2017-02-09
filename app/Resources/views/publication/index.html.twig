@@ -10,8 +10,6 @@
                     <th>Id</th>
                     <th>Title</th>
                     <th>Author</th>
-                    <th>Description</th>
-                    <th>Content</th>
                     <th>Publishedat</th>
                     <th>Validated</th>
                     <th>Actions</th>
@@ -27,8 +25,6 @@
                     </td>
                     <td>{{ publication.title }}</td>
                     <td>{{ publication.author }}</td>
-                    <td>{{ publication.description }}</td>
-                    <td>{{ publication.content }}</td>
                     <td>{% if publication.publishedAt %}{{ publication.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                     <td>{% if publication.validated %}Yes{% else %}No{% endif %}</td>
                     <td>
