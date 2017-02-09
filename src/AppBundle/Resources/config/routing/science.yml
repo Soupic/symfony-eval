@@ -25,5 +25,5 @@ science_delete:
 
 science_detail:
     path: /{id}
-    defaults: { _controller: "AppBundle:detail" }
+    defaults: { _controller: "AppBundle:App:detail" }
     methods: GET
