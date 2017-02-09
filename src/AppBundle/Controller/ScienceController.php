@@ -22,7 +22,7 @@ class ScienceController extends Controller
 
         $sciences = $em->getRepository('AppBundle:Science')->findAll();
 
-        return $this->render('science/index.html.twig', array(
+        return $this->render('AppBundle:App:science.html.twig', array(
             'sciences' => $sciences,
         ));
     }
@@ -121,4 +121,5 @@ class ScienceController extends Controller
             ->getForm()
         ;
     }
+
 }

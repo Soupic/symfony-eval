@@ -26,4 +26,16 @@ class AppController extends Controller
             "publications" => $publications,
         ]);
     }
+
+    public function detailAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $sciences = $em->getRepository("AppBundle:Science")->findAll();
+        $publications = $em->getRepository("AppBundle:Publication")->findAll();
+
+        return $this->render("AppBundle:App:detail_science.html.twig", [
+            "sciences" => $sciences,
+            "publications" => $publications,
+        ]);
+    }
 }

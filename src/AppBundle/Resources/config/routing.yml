@@ -12,4 +12,4 @@ app_publication:
 
 app_science:
         resource: "@AppBundle/Resources/config/routing/science.yml"
-        prefix:   /science
+        prefix:   /sciences

@@ -1,0 +1,43 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+
+        <!-- Science -->
+        {% for science in sciences %}
+        <div class="science-thumb">
+            <h1>{{ science.title }}</h1>
+            <p>
+                <!-- description -->
+                {{ science.description }}
+            </p>
+        </div>
+        {% endfor %}
+        <hr>
+    </div>
+
+    <div class="container">
+
+        <!-- Liste des publications pour cette science -->
+        {% for publication in publications %}
+        <div class="publication-thumb">
+            <h2>{{ publication.title }}</h2>
+            <p>
+                Publié par <strong>{{ publication.author }}</strong>,
+                le <em>{{ publication.publishedAt|date("d/m/y") }}</em>.
+            </p>
+            <p>
+                <!-- description -->
+                {{ publication.description }}
+            </p>
+            <p>
+                <!-- Lien vers le détail de la publication -->
+                <a href="#"
+                   class="btn btn-sm btn-default">
+                    Lire la publication
+                </a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
